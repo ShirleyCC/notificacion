@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>notificacion</title>
+        <title>notificaciones</title>
     </head>
     <body>
 
@@ -24,7 +24,7 @@ NOTE:
             var pushNotification;
             
             function onDeviceReady() {
-                $("#app-status-ul").append('<li>Device ok. Evento ativado.</li>');
+                $("#app-status-ul").append('<li>Dispositivo ok. Evento activado.</li>');
                 
 				document.addEventListener("backbutton", function(e)
 				{
@@ -56,8 +56,8 @@ NOTE:
                 }
 				catch(err) 
 				{ 
-					txt="Um erro ocorreu.\n\n"; 
-					txt+="Descrição do erro: " + err.message + "\n\n"; 
+					txt="Un error ha ocurrido.\n\n"; 
+					txt+="Descripción del error: " + err.message + "\n\n"; 
 					alert(txt); 
 				} 
             }
@@ -65,7 +65,7 @@ NOTE:
             // handle APNS notifications for iOS
             function onNotificationAPN(e) {
                 if (e.alert) {
-                     $("#app-status-ul").append('<li>push-notificação: ' + e.alert + '</li>');
+                     $("#app-status-ul").append('<li>push-notificación: ' + e.alert + '</li>');
                      // showing an alert also requires the org.apache.cordova.dialogs plugin
                      navigator.notification.alert(e.alert);
                 }
@@ -83,7 +83,7 @@ NOTE:
             
             // handle GCM notifications for Android
             function onNotification(e) {
-                $("#app-status-ul").append('<li>EVENTO -> RECEBIDO:' + e.event + '</li>');
+                $("#app-status-ul").append('<li>EVENTO -> RECIBIDO:' + e.event + '</li>');
                 
                 switch( e.event )
                 {
@@ -102,7 +102,7 @@ NOTE:
                     	// you might want to play a sound to get the user's attention, throw up a dialog, etc.
                     	if (e.foreground)
                     	{
-							$("#app-status-ul").append('<li>--NOTIFICAÇÕES IN LINE--' + '</li>');
+							$("#app-status-ul").append('<li>--NOTIFICACIONES ON LINE--' + '</li>');
 						      
 						        // on Android soundname is outside the payload. 
 					                // On Amazon FireOS all custom attributes are contained within payload
@@ -116,7 +116,7 @@ NOTE:
 						else
 						{	// otherwise we were launched because the user touched a notification in the notification tray.
 							if (e.coldstart)
-								$("#app-status-ul").append('<li>--NOTIFICAÇÕES RECEBIDAS--' + '</li>');
+								$("#app-status-ul").append('<li>--NOTIFICACIONES RECIBIDAS--' + '</li>');
 							else
 							$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 						}
@@ -133,7 +133,7 @@ NOTE:
                     break;
                     
                     default:
-						$("#app-status-ul").append('<li>EVENTO -> Unknown, an event was received and we do not know what it is</li>');
+						$("#app-status-ul").append('<li>EVENTO -> Desconocido.</li>');
                     break;
                 }
             }
@@ -156,13 +156,13 @@ NOTE:
 
          </script>
 		<div id="home">
-        <img src="icon.png" width="128" height="128">
-<h2>Teste plugin push </h2>
-        <div id="app-status-div">
-			<ul id="app-status-ul">
-					<li>Cordova PushNotification Plugin Demo</li>
-				</ul>
-			</div>
+            <img src="icon.png" width="128" height="128">
+            <h2>Agrocabildo Notificaciones </h2>
+            <div id="app-status-div">
+                <ul id="app-status-ul">
+                        <li>Agrocabildo Notificaciones</li>
+                </ul>
+            </div>
 		</div>
     </body>
 </html>
